@@ -276,8 +276,7 @@ RSpec.describe SwaggerYard::Swagger do
       context "with a nullable flag" do
         let(:content) { ['@model MyModel', '@property name(nullable) [string]  Name'] }
 
-        its(['name', 'type'])           { is_expected.to eq(['string', 'null']) }
-        its(['name', 'x-nullable'])     { is_expected.to eq(true) }
+        its(['name', 'nullable'])       { is_expected.to eq(true) }
       end
 
       context "with a nullable model" do
