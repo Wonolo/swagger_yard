@@ -260,7 +260,7 @@ RSpec.describe SwaggerYard::TypeParser do
 
     it {
       expect_json_schema '(Foo | Bar)' => {
-        'oneOf' => [{ "$ref" => "#/definitions/Foo" },
+        'anyOf' => [{ "$ref" => "#/definitions/Foo" },
                     { "$ref" => "#/definitions/Bar" }]
       }
     }
@@ -274,7 +274,7 @@ RSpec.describe SwaggerYard::TypeParser do
 
     it {
       expect_json_schema '(Foo | (Bar & Baz))' => {
-        'oneOf' => [{ "$ref" => "#/definitions/Foo" },
+        'anyOf' => [{ "$ref" => "#/definitions/Foo" },
                     { 'allOf' => [{ "$ref" => "#/definitions/Bar" },
                                   { "$ref" => "#/definitions/Baz" }]}]
       }
