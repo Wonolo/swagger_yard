@@ -139,7 +139,7 @@ module SwaggerYard
       end
 
       rule(union: subtree(:types)) do
-        { 'oneOf' => Array(types) }
+        { 'anyOf' => Array(types) }
       end
 
       rule(intersect: subtree(:types)) do
